@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landingpage from "./components/Landingpage";
+import SignUp from "./auth/SignUp";
+import Menu from "./Menus/Menu";
+import Followers from "./Menus/Followers";
+import ChatArea from "./Menus/ChatArea";
+import Profile from "./Menus/Profile";
+import Notification from "./Menus/Notification";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landingpage />} />
+          <Route path="/Signup" element={<SignUp />} />
+          <Route path="/Menu" element={<Menu />} />
+          <Route path="/Followers" element={<Followers />} />
+          <Route path="/ChatArea" element={<ChatArea />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Notification" element={<Notification />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
