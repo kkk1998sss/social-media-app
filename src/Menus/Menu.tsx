@@ -102,7 +102,7 @@ const Menu = () => {
         <Link to="/Signup">
           <button
             children="Logout"
-            className=" py-4 w-11/12 bg-green-100 text-green-400 border-2 border-green-400"
+            className="py-4 w-11/12 rounded-lg bg-green-100 text-green-400 border-2 border-green-400"
           ></button>
         </Link>
       </div>

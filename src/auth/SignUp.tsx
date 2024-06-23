@@ -49,11 +49,15 @@ const SignUp = () => {
 
     if (isLogin) {
       const user = localStorage.getItem(email);
+
       if (user) {
         const userDetails = JSON.parse(user);
         if (userDetails.password === password) {
           console.log("Login successful");
           navigate("/Menu");
+          setEmail("");
+          setPassword("");
+          setError("");
         } else {
           setError("Invalid email or password");
         }
@@ -67,12 +71,11 @@ const SignUp = () => {
       } else {
         localStorage.setItem(email, JSON.stringify({ email, password }));
         alert("User registered successfully");
+        setEmail("");
+        setPassword("");
+        setError("");
       }
     }
-
-    setEmail("");
-    setPassword("");
-    setError("");
   };
 
   return (
